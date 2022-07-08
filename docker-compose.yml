@@ -1,0 +1,21 @@
+version: '2.3'
+services:
+  opencv_cuda_lite:
+    tty: true # https://stackoverflow.com/questions/44884719/exited-with-code-0-docker
+    image: nivrattituito/opencv-dnn-4.5.5-lite-static-ubuntu-1804-with-cuda:latest
+    container_name: nivrattituito_opencv_cuda_lite
+    volumes:
+      - ./workspace:/workspace
+    user: root
+    build:
+      context: build
+      dockerfile: Dockerfile
+      args:
+        UBUNTU_VERSION: 18.04
+        OPENCV_VERSION: 4.5.5
+    ipc: host
+    restart: unless-stopped     # or "always"
+    stdin_open: true
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all

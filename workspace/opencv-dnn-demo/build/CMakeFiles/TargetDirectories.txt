@@ -1,0 +1,3 @@
+/workspace/opencv-dnn-demo/build/CMakeFiles/rebuild_cache.dir
+/workspace/opencv-dnn-demo/build/CMakeFiles/main.dir
+/workspace/opencv-dnn-demo/build/CMakeFiles/edit_cache.dir
